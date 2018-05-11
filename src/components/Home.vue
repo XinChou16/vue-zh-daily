@@ -4,7 +4,7 @@
    <ul>
      <li v-for="story in storiesFilter"
         v-bind:key="story.id">
-        <div class="box">
+        <div class="box"> 
           <div class="box-txt">
             <p>{{story.title}}</p>
           </div>
