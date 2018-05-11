@@ -50,8 +50,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   font-size:16px;
+  background-color: #eee;
 }
-
 h1, h2 {
   font-weight: normal;
 }

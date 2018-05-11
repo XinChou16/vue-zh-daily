@@ -48,12 +48,23 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    proxy: {
+      // proxy all requests starting with /api to jsonplaceholder
+      '/api': {
+        target: 'https://news-at.zhihu.com/api',
+        changeOrigin: true,
+        secure:false,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {
