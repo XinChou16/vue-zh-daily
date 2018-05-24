@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     storiesFilter() {
-      return this.stories.slice(0,3)
+      return this.stories.slice(1,2)
     }
   },
   created() {
@@ -55,7 +55,7 @@ ul,li {
   position: relative;
   border-radius: 5px;
   background-color: #fff;
-  height: 390px;
+  height: 350px;
   width: 500px;
   margin-bottom: 5px;
   line-height: 1.3;
@@ -66,8 +66,9 @@ ul,li {
 }
 .box-txt {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 20px;
+  text-align: left;
 }
 .box-img {
   width: 500px;

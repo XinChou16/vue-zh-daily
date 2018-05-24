@@ -3,7 +3,9 @@
    <h1>今日最热</h1>
    <ul>
      <li v-for="story in storiesFilter"
-        v-bind:key="story.id">
+        v-bind:key="story.id"
+        v-on:click="showStory(story)"
+        >
         <div class="box"> 
           <div class="box-txt">
             <p>{{story.title}}</p>
@@ -14,7 +16,7 @@
         </div>
      </li>
    </ul>
-   <img src="https://pic3.zhimg.com/v2-f3235f49a96437d5b2ea8f3ce63bd5fa.jpg" alt="">
+   <!-- <img src="https://pic3.zhimg.com/v2-f3235f49a96437d5b2ea8f3ce63bd5fa.jpg" alt=""> -->
    <!-- <ul>
      <li>
       <div class="box">
@@ -55,16 +57,24 @@ export default {
     //   console.log(res.data);
     // })
     // axios.get('/src/data.json')
-    axios.get('/api/4/news/latest')
+    axios.get('/api/4/news/before/20180512')
     .then( res => {
       // console.log(res.data);
       this.stories = res.data.stories;
     })
+  },
+  methods: {
+    showStory(story) {
+      console.log(story.id,story.title);
+    }
   }  
 }
 </script>
 
 <style scoped>
+ul > li {
+  cursor: pointer;
+}
 .stories {
   text-align: left;
 }
